@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>AlphaAdmin</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/datatablejs/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap-table.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+</head>
+
+<body>
+    <div class="skin-default" id="wrapper">
+      <!-- 头部 start -->
+      <div id="head"></div>
+      <!-- 头部 end-->
+      <!-- 左侧导航 start -->
+      <div id="left"></div>
+      <!-- 左侧导航 end-->
+        <div class="page-wrapper">
+            <div class="page-header">
+                <h1 class="title">
+                    表格
+                    <small>数据表格</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="../../index.html" title="家">
+                            <i class="iconfont icon-home"></i>
+                            <small>家</small>
+                        </a>
+                    </li>
+                    <li>
+                        <small>
+                            表格
+                        </small>
+                    </li>
+                    <li class="active">
+                        <small>数据表格</small>
+                    </li>
+                </ol>
+            </div>
+            <section class="page-body">
+                <div class="row widget">
+                    <section class="col-md-12">
+                        <div class="box table">
+                            <div class="box-header">
+                                <h3 class="box-title">简单数据表格</h3>
+                            </div>
+                            <div class="box-body">
+                                <table id="table" class="table table-responsive table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>商品名称</th>
+                                            <th>商品价格(￥)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>鼠标</td>
+                                            <td>56</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>键盘</td>
+                                            <td>160</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>显示器</td>
+                                            <td>1630</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>音响</td>
+                                            <td>256</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">标题</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>大屏弹窗</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Small modal -->
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">标题</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>小屏弹窗</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 修改密码模态框 start -->
+    		<div id="editpass"></div>
+    		<!-- 修改密码模态框 end-->
+
+    		<!-- 退出提示模态框 start-->
+    		<div id="logout"></div>
+    		<!-- 退出提示模态框 end-->
+    </div>
+    <script type="text/javascript" src="../../assets/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../assets/libs/datatablejs/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../assets/libs/datatablejs/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/alpha.js"></script>
+    <script type="text/javascript">
+    $(function(){
+      $("#head").load("/pages/public/head.html");
+    });
+    $(function(){
+      $("#left").load("/pages/public/left.html");
+    });
+    $(function(){
+  		$("#editpass").load("/pages/public/editpass.html");
+  	});
+  	$(function(){
+  		$("#logout").load("/pages/public/logout.html");
+  	});
+    $(window).on('load', function () {
+      $("#tables23").click();
+    });
+    </script>
+    <script type="text/javascript">
+    $(function() {
+        $('#table').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false,
+            language: {
+                "sProcessing": "处理中...",
+                "sLengthMenu": "显示 _MENU_ 项结果",
+                "sZeroRecords": "没有匹配结果",
+                "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+                "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+                "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+                "sInfoPostFix": "",
+                "sSearch": "搜索:",
+                "sUrl": "",
+                "sEmptyTable": "表中数据为空",
+                "sLoadingRecords": "载入中...",
+                "sInfoThousands": ",",
+                "oPaginate": {
+                    "sFirst": "首页",
+                    "sPrevious": "上页",
+                    "sNext": "下页",
+                    "sLast": "末页"
+                },
+                "oAria": {
+                    "sSortAscending": ": 以升序排列此列",
+                    "sSortDescending": ": 以降序排列此列"
+                }
+            }
+        })
+    })
+    </script>
+</body>
+
+</html>
